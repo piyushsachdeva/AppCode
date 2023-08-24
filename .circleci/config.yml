@@ -14,7 +14,6 @@ jobs:
             echo $version
             docker build -t chauhanhimani/todo-app:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-            docker tag todo-app:$version chauhanhimani/todo-app:$version
             docker push chauhanhimani/todo-app:$version
 
   Update_menifest:
