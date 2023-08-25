@@ -33,6 +33,7 @@ jobs:
             pwd
             cd kube_manifest
             pwd
+            echo $TAG
             sed -i "s/build-.*/build-$TAG/g" manifest/deployment.yaml
             cat manifest/deployment.yaml
             git add .
