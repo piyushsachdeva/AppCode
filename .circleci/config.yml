@@ -30,8 +30,11 @@ jobs:
             git clone https://github.com/chauhan-himani/kube_manifest.git
             git config --global user.email "chauhanhimani512@gmail.com"
             git config --global user.name "chauhan-himani"
+            pwd
             cd kube_manifest
+            pwd
             sed -i "s/build-.*/build-$TAG/g" manifest/deployment.yaml
+            cat deployment.yaml
             git add .
             git commit -m "new build with imgTag build-$TAG"
             git config credential.helper 'cache --timeout=120'
