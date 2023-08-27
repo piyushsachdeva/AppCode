@@ -87,7 +87,7 @@ class App extends Component {
                         fontWeight: "bolder",
                     }}
                 >
-                    Ankit's ➡️ TODO LIST
+                    Himani ➡️ TODO LIST
                 </Row>
   
                 <hr />
