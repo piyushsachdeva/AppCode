@@ -12,9 +12,9 @@ jobs:
           command: |
             version="build-$CIRCLE_BUILD_NUM"
             echo $version
-            docker build -t chauhanhimani/todo-app:$version .
+            docker build -t piyushsachdeva/todo-app:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-            docker push chauhanhimani/todo-app:$version
+            docker push piyushsachdeva/todo-app:$version
 
   Update_manifest:
     docker:
@@ -27,9 +27,9 @@ jobs:
           command: |
             TAG=$CIRCLE_BUILD_NUM
             ((TAG--))
-            git clone https://github.com/chauhan-himani/kube_manifest.git
-            git config --global user.email "chauhanhimani512@gmail.com"
-            git config --global user.name "chauhan-himani"
+            git clone https://github.com/piyushsachdeva/kube_manifest.git
+            git config --global user.email "piyush.sachdeva055@gmail.com"
+            git config --global user.name "piyushsachdeva"
             pwd
             cd kube_manifest
             pwd
@@ -39,7 +39,7 @@ jobs:
             git add .
             git commit -m "new build with imgTag build-$TAG"
             git config credential.helper 'cache --timeout=120'
-            git push -q https://$GITHUB_PERSONAL_TOKEN@github.com/chauhan-himani/kube_manifest.git main 
+            git push -q https://$GITHUB_PERSONAL_TOKEN@github.com/piyushsachdeva/kube_manifest.git main 
 workflows:
   GitOpsflow:
     jobs:
